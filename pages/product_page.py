@@ -29,7 +29,11 @@ class ProductPage(BasePage):
     def add_to_basket(self):
         btn_add_to_basket = self.browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET)
         btn_add_to_basket.click()
-        # self.solve_quiz_and_get_code()
+
+    def add_to_basket_with_alert(self):
+        btn_add_to_basket = self.browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET)
+        btn_add_to_basket.click()
+        self.solve_quiz_and_get_code()
 
     def should_match_name_added_product(self):
         assert self.is_alert_match(ProductPageLocators.NAME_PRODUCT_IN_SUCCESS_MESSAGE, self.name_product),\
