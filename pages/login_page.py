@@ -26,3 +26,9 @@ class LoginPage(BasePage):
        self.browser.find_element(*LoginPageLocators.REGISTER_PASSWORD1).send_keys(password)
        self.browser.find_element(*LoginPageLocators.REGISTER_PASSWORD2).send_keys(password)
        self.browser.find_element(*LoginPageLocators.SUBMIT_REGISTER).click()
+
+    def authorized_new_user(self, email, password):
+       self.browser.find_element(*LoginPageLocators.REGISTER_EMAIl).send_keys(email)
+       self.browser.find_element(*LoginPageLocators.REGISTER_PASSWORD1).send_keys(password)
+       self.browser.find_element(*LoginPageLocators.REGISTER_PASSWORD2).send_keys(password)
+       self.browser.find_element(*LoginPageLocators.SUBMIT_REGISTER).click()
